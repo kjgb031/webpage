@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     // return result as xml
     header('Content-Type: application/xml');
 
-    $xml = new SimpleXMLElement('<Songs/>');
+    $xml = new SimpleXMLElement('<Museums/>');
     $json_data = json_decode($result, true);
     $json_data = array_values($json_data);
     // museums{museumType, name}
