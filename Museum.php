@@ -13,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     }
     else {
         $data = json_decode($json, true);
-        $result = json_encode($data['Song']);
+        $result = json_encode($data['Museums']);
     }
 
     // return result as xml
@@ -22,11 +22,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     $xml = new SimpleXMLElement('<Songs/>');
     $json_data = json_decode($result, true);
     $json_data = array_values($json_data);
-    // song{name, date_created}
-    foreach ($json_data as $song) {
-        $song_xml = $xml->addChild('Song');
-        $song_xml->addChild('Name', $song['Name']);
-        $song_xml->addChild('DateCreated', $song['DateCreated']);
+    // museums{museumType, name}
+    foreach ($json_data as $museum) {
+        $song_xml = $xml->addChild('Museums');
+        $song_xml->addChild('MuseumType', $museum['MuseumType']);
+        $song_xml->addChild('Name', $museum['Name']);
     }
 
     echo $xml->asXML();
@@ -44,9 +44,9 @@ function parse_xml($xml_file) {
 function search($json, $search) {
     $data = json_decode($json, true);
     $result = array();
-    foreach ($data['Song'] as $song) {
-        if (strpos($song['Name'], $search) !== false) {
-            $result[] = $song;
+    foreach ($data['Museums'] as $museum) {
+        if (strpos($museum['Name'], $search) !== false) {
+            $result[] = $museum;
         }
     }
     return json_encode($result);
