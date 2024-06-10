@@ -88,3 +88,25 @@ function setImg3() {
 	
 }
 
+  // get request to /backend.php
+        //initial xml data
+        document.addEventListener("DOMContentLoaded", function() {
+            fetch('Museum.php')
+                .then(response => response.text())
+                .then(data => {
+                    console.log(data);
+                });
+        });
+
+
+        // use the search parameter to filter the data
+
+        const searchbar = document.getElementById('search');
+
+        searchbar.addEventListener('input', function() {
+            fetch(`Museum.php?search=${searchbar.value}`)
+                .then(response => response.text())
+                .then(data => {
+                    console.log(data);
+                });
+        });
