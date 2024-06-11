@@ -24,7 +24,7 @@ function aboutUs() {
 }
 
 function btnHomepage() {
-    window.location.href = "localhost/webpage-main/webpage-main/mainPage.html";
+    	window.location.href = "localhost/webpage-main/webpage-main/mainPage.html";
 }
 /*ANTHROPOLOGY CAROUSEL*/
 var a = 0;
