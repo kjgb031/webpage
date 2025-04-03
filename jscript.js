@@ -20,11 +20,11 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 function aboutUs() {
-	window.location.href = "localhost/webpage-main/webpage-main/AboutUs.html";
+	window.location.href = "/AboutUs.html";
 }
 
 function btnHomepage() {
-    	window.location.href = "localhost/webpage-main/webpage-main/mainPage.html";
+    	window.location.href = "/mainPage.html";
 }
 /*ANTHROPOLOGY CAROUSEL*/
 var a = 0;
