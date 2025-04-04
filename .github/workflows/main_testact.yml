@@ -1,7 +1,7 @@
 # Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 
-name: Build and deploy PHP app to Azure Web App - TestAct
+name: Build and deploy PHP app to Azure Web App - TESTaCT
 
 on:
   push:
@@ -64,15 +64,15 @@ jobs:
       - name: Login to Azure
         uses: azure/login@v2
         with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_D70CDA8FDE7B4DCF97376A71FD728145 }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_1E3999B9E4AC4744BA1A3534E51F0F0E }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_8467194CB24C4CA2A0532C81E6A6C700 }}
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_36C56AC2E6CB495B8AA05549A16CED74 }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_EB9F3861F6174AA492C5D3C80BEF282B }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_A04368F264794B55BDB0CBD7B2801C70 }}
 
       - name: 'Deploy to Azure Web App'
         uses: azure/webapps-deploy@v3
         id: deploy-to-webapp
         with:
-          app-name: 'TestAct'
+          app-name: 'TESTaCT'
           slot-name: 'Production'
           package: .
           
